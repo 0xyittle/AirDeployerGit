@@ -5,10 +5,23 @@ zero code deploy smartcontract.
 - Root Directory : website (Next.js)
 - Sub-Directory : contracts
 
-## Note ABI + BYTE
+## Chains
+- Optimism
+- Base
+- Zora
+- Mode
+- Blast
+- Arbitrum
+- Bera Testnet
+- Cyber
+- Mint
+
+## Note BYTE​ CODE
 
 ### Normal Version byteV826 (v.0.8.26)==
 - ALL CHAIN Excluded below
 
 ### byteV824 (v.0.8.24) ==
 - Bera Chain
+
+
