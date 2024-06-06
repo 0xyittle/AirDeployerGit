@@ -24,16 +24,13 @@ And certainly, in the near future, everyone who deploys contracts using AirDeplo
 - Mode
 - Blast
 - Arbitrum
-- Bera Testnet
-- Cyber
-- Mint
+- Bera Testnet (soon)
+- Cyber (soon)
+- Mint (soon)
 
 ## Note BYTE​ CODE
 
 ### Normal Version byteV826 (v.0.8.26)==
 - ALL CHAIN Excluded below
-
-### byteV824 (v.0.8.24) ==
-- Bera Chain
 
 
