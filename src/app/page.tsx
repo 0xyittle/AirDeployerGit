@@ -6,15 +6,31 @@
 import React, { useState } from "react"
 import { Button, Input, Typography } from "antd"
 import { useEthersSigner } from "@/utils/ethers";
-import { ethers, parseEther } from 'ethers';
+import { ethers } from 'ethers';
 
 import { abi } from "@/contractdata/abi"; 
-import { byte } from "@/contractdata/bytecode";
+import { byteV826 } from "@/contractdata/bytecode/bytecode-v8-26";
+import { byteV824 } from "@/contractdata/bytecode/bytecode-v8-24";
+
+import { useAccount } from "wagmi";
+
+/*
+  * Note ABI + BYTE
+
+  * == Normal Version ==
+  * == byteV826
+
+  * == byteV824 ==
+  * - Bera Chain
+  * 
+
+*/
 
 export default function Home() {
 
   const { Title } = Typography;
-
+  const { chainId } = useAccount()
+  console.log('chainId 1: ', chainId)
 
   const [name, setName] = useState<string>('')
   const [token, setToken] = useState<string>('')
@@ -27,7 +43,21 @@ export default function Home() {
 
   const [isDeploy, setIsDeploy] = useState<boolean>(false)
 
+  const [byteReal, setByte] = useState<any>(byteV826)
+
   const signer = useEthersSigner()
+
+  async function ByteRouter() {
+
+    // BeraTestnet = 80085
+    if(chainId == 80085) {
+      return byteV824 ;
+    }
+    else {
+      return byteV826 ;
+    }
+
+  }
 
   const deployContract = async () => {
     console.log("name : ", name)
@@ -44,8 +74,7 @@ export default function Home() {
       setIsDeploy(true)
       // let json = {}
 
-      // let AbiContract = JSON.parse(abi) ;
-      let bytecode = byte ; 
+      let bytecode = await ByteRouter() ; 
 
       const factory = new ethers.ContractFactory(abi, bytecode, signer);
       const contract = await factory.deploy(name,token,mintPrice,uri,startDate,endDate,maxSupply,maxPerWallet);
@@ -68,6 +97,8 @@ export default function Home() {
     <>
       
       <Title>AirDeployer</Title>
+
+      <Title level={5} className="mt-3">Select Chain</Title>
       <w3m-button />
 
       <Title level={5} className="mt-3">Collection name</Title>
@@ -110,7 +141,7 @@ export default function Home() {
         }}
       />
 
-      <Title level={5} className="mt-3">StartDate UnixTimeStamp</Title>
+      <Title level={5} className="mt-3">StartDate UnixTimeStamp (0 = Start Now) </Title>
       <Input 
         placeholder='StartDate UnixTimeStamp'
         className="margin-5"
@@ -120,7 +151,7 @@ export default function Home() {
         }}
       />
 
-      <Title level={5} className="mt-3">EndDate UnixTimeStamp</Title>
+      <Title level={5} className="mt-3">EndDate UnixTimeStamp (0 = infinity)</Title>
       <Input 
         placeholder='EndDate UnixTimeStamp'
         className="margin-5"
