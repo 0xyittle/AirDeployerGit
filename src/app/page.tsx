@@ -17,10 +17,10 @@ import { useAccount } from "wagmi";
 /*
   * Note ABI + BYTE
 
-  * == Normal Version ==
-  * == byteV826
-
-  * == byteV824 ==
+  * == Normal Version byteV826 (v.0.8.26)==
+  * - ALL CHAIN Excluded below
+  *
+  * == byteV824 (v.0.8.24) ==
   * - Bera Chain
   * 
 
