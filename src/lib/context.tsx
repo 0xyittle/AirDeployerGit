@@ -23,7 +23,9 @@ createWeb3Modal({
     81457: 'https://pbs.twimg.com/profile_images/1726739354700173312/OeT9Ef1J_400x400.jpg', // BLAST
     185: 'https://pbs.twimg.com/profile_images/1783320986093588480/uhUB3xKT_400x400.jpg', // MINT Mainnet
     690: 'https://pbs.twimg.com/profile_images/1724553277147131904/cdma6E3g_400x400.jpg', //redstone
-    7560: 'https://pbs.twimg.com/profile_images/1790617734281154560/MqaxhdzZ_400x400.jpg' // cyber
+    7560: 'https://pbs.twimg.com/profile_images/1790617734281154560/MqaxhdzZ_400x400.jpg', // cyber
+    252: 'https://pbs.twimg.com/media/GFxG_ZXbYAAyI76.jpg', // fraxtal
+    80084: 'https://avatars.githubusercontent.com/u/96059542?s=280&v=4' // Bera
   },
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
   enableOnramp: true, // Optional - false as default

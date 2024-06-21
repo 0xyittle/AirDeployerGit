@@ -10,7 +10,7 @@ import { ethers } from 'ethers';
 
 import { abi } from "@/contractdata/abi"; 
 import { byteV826 } from "@/contractdata/bytecode/bytecode-v8-26";
-import { byteV824 } from "@/contractdata/bytecode/bytecode-v8-24";
+import { byteV819 } from "@/contractdata/bytecode/bytecode-v8-19";
 
 import { useAccount } from "wagmi";
 
@@ -20,7 +20,7 @@ import { useAccount } from "wagmi";
   * == Normal Version byteV826 (v.0.8.26)==
   * - ALL CHAIN Excluded below
   *
-  * == byteV824 (v.0.8.24) ==
+  * == byteV819 (v.0.8.19) ==
   * - Bera Chain
   * 
 
@@ -49,13 +49,16 @@ export default function Home() {
 
   async function ByteRouter() {
 
-    // BeraTestnet = 80085
-    if(chainId == 80085) {
-      return byteV824 ;
-    }
-    else {
-      return byteV826 ;
-    }
+    console.log("chainId : ", chainId)
+    // // BeraTestnet = 80084
+    // if(chainId == 80084) {
+    //   return byteV819 ;
+    // }
+    // else {
+    //   return byteV826 ;
+    // }
+
+    return byteV826 ;
 
   }
 

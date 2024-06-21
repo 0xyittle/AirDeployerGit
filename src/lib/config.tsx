@@ -1,9 +1,10 @@
 import { defaultWagmiConfig } from '@web3modal/wagmi/react/config'
 
 import { cookieStorage, createStorage, createConfig, http , webSocket} from 'wagmi'
-import { arbitrum, base, mode, optimism, zora, blast, berachainTestnet, cyber, redstone } from 'wagmi/chains'
+import { arbitrum, base, mode, optimism, zora, blast, fraxtal , cyber, redstone} from 'wagmi/chains'
 import { injected, coinbaseWallet, walletConnect } from 'wagmi/connectors' 
 import { mintMainnet  } from '@/customchain/mint'
+import { berachainTestnet } from '@/customchain/bera'
 
 // Get projectId at https://cloud.walletconnect.com
 export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
@@ -19,7 +20,7 @@ const metadata = {
 
 // Create wagmiConfig
 export const config = createConfig({
-  chains: [optimism, base, zora, mode, blast, arbitrum, berachainTestnet, cyber, mintMainnet, redstone],
+  chains: [optimism, base, zora, mode, blast, arbitrum, berachainTestnet, cyber, mintMainnet, redstone,fraxtal],
   transports: {
     [optimism.id]: http(),
     [base.id]: http(),
@@ -30,7 +31,8 @@ export const config = createConfig({
     [berachainTestnet.id]: http(),
     [cyber.id]: http(),
     [mintMainnet.id]: http(),
-    [redstone.id]: http()
+    [redstone.id]: http(),
+    [fraxtal.id]: http()
   },
   connectors: [
     walletConnect({ projectId, metadata, showQrModal: false }),
