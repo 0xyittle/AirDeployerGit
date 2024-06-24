@@ -3,7 +3,7 @@
 //* compiler version 0.8.26
 //* optimize 200
 
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import { Button, Input, Typography } from "antd"
 import { useEthersSigner } from "@/utils/ethers";
 import { ethers } from 'ethers';
@@ -29,9 +29,9 @@ import { useAccount } from "wagmi";
 export default function Home() {
 
   const { Title } = Typography;
-  const { chainId } = useAccount()
-  console.log('chainId 1: ', chainId)
-
+  const { chainId , isConnected } = useAccount()
+  
+  const [walletChain, setWalletChain] = useState<number>(20)
   const [name, setName] = useState<string>('')
   const [token, setToken] = useState<string>('')
   const [mintPrice, setMintPrice] = useState<number>(0)
@@ -47,16 +47,18 @@ export default function Home() {
 
   const signer = useEthersSigner()
 
+  useEffect(()=>{
+    if(chainId == undefined) {
+      setWalletChain(20)
+    } else {
+      setWalletChain(chainId)
+    }
+  },[chainId])
+
   async function ByteRouter() {
 
-    console.log("chainId : ", chainId)
-    // // BeraTestnet = 80084
-    // if(chainId == 80084) {
-    //   return byteV819 ;
-    // }
-    // else {
-    //   return byteV826 ;
-    // }
+    console.log("walletChain : ", walletChain)
+
 
     return byteV826 ;
 
