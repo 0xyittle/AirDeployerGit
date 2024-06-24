@@ -80,7 +80,7 @@ export default function Home() {
       let bytecode = await ByteRouter() ; 
 
       const factory = new ethers.ContractFactory(abi, bytecode, signer);
-      const contract = await factory.deploy(name,token,mintPrice,uri,startDate,endDate,maxSupply,maxPerWallet);
+      const contract = await factory.deploy(name,token,String(mintPrice),uri,startDate,endDate,maxSupply,maxPerWallet);
       // const txReceipt = await deploy.deploymentTransaction().wait();
 
       // const tx = await factory.getDeployTransaction()
