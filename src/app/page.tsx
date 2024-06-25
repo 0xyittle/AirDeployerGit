@@ -8,9 +8,8 @@ import { Button, Input, Typography } from "antd"
 import { useEthersSigner } from "@/utils/ethers";
 import { ethers } from 'ethers';
 
-import { abi } from "@/contractdata/abi"; 
-import { byteV826 } from "@/contractdata/bytecode/bytecode-v8-26";
-import { byteV819 } from "@/contractdata/bytecode/bytecode-v8-19";
+import { abiVER3 } from "@/contractdata/abi-ver3"; 
+import { byteV826VER3 } from "@/contractdata/bytecode/bytecode-v8-26-ver3";
 
 import { useAccount } from "wagmi";
 
@@ -19,10 +18,8 @@ import { useAccount } from "wagmi";
 
   * == Normal Version byteV826 (v.0.8.26)==
   * - ALL CHAIN Excluded below
-  *
-  * == byteV819 (v.0.8.19) ==
-  * - Bera Chain
   * 
+  * RIGHT NOW CONTRACT IS VER 3
 
 */
 
@@ -43,7 +40,7 @@ export default function Home() {
 
   const [isDeploy, setIsDeploy] = useState<boolean>(false)
 
-  const [byteReal, setByte] = useState<any>(byteV826)
+  const [byteReal, setByte] = useState<any>(byteV826VER3)
 
   const signer = useEthersSigner()
 
@@ -60,7 +57,7 @@ export default function Home() {
     console.log("walletChain : ", walletChain)
 
 
-    return byteV826 ;
+    return byteV826VER3 ;
 
   }
 
@@ -81,7 +78,7 @@ export default function Home() {
 
       let bytecode = await ByteRouter() ; 
 
-      const factory = new ethers.ContractFactory(abi, bytecode, signer);
+      const factory = new ethers.ContractFactory(abiVER3, bytecode, signer);
       const contract = await factory.deploy(name,token,String(mintPrice),uri,startDate,endDate,maxSupply,maxPerWallet);
       // const txReceipt = await deploy.deploymentTransaction().wait();
 
