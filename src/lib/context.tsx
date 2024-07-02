@@ -20,12 +20,16 @@ createWeb3Modal({
   projectId,
   chainImages: {
     34443: 'https://pbs.twimg.com/profile_images/1688569679877390338/IYXD4bdy_400x400.jpg', // MODE
-    81457: 'https://pbs.twimg.com/profile_images/1726739354700173312/OeT9Ef1J_400x400.jpg', // BLAST
+    81457: 'https://chainbroker.io/_next/image/?url=https%3A%2F%2Fstatic.chainbroker.io%2Fmediafiles%2Fprojects%2Fblast%2Fblast.jpeg&w=2560&q=75', // BLAST
     185: 'https://pbs.twimg.com/profile_images/1783320986093588480/uhUB3xKT_400x400.jpg', // MINT Mainnet
     690: 'https://pbs.twimg.com/profile_images/1724553277147131904/cdma6E3g_400x400.jpg', //redstone
     7560: 'https://pbs.twimg.com/profile_images/1790617734281154560/MqaxhdzZ_400x400.jpg', // cyber
-    252: 'https://pbs.twimg.com/media/GFxG_ZXbYAAyI76.jpg', // fraxtal
-    80084: 'https://avatars.githubusercontent.com/u/96059542?s=280&v=4' // Bera
+    252: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGxrAqkyM1Zz-pgjDtYZawqPdEEEcUXZjL9g&s', // fraxtal
+    80084: 'https://avatars.githubusercontent.com/u/96059542?s=280&v=4', // Bera
+    167000: 'https://cdn.dribbble.com/userupload/7958487/file/original-1348331c2846a04355261f363fb75f0c.png?resize=1600x1200', // Taiko
+    59144: 'https://images.seeklogo.com/logo-png/52/1/linea-logo-png_seeklogo-527155.png', // Linea
+    534352: 'https://media.licdn.com/dms/image/D4E0BAQF6gMSNL5xYCA/company-logo_200_200/0/1692892037062/scroll_io_logo?e=2147483647&v=beta&t=H0sTCb5XBPUvt7yKUD65kYY2qN9L5dd0udOMu48PkKk', // Scroll
+  
   },
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
   enableOnramp: true, // Optional - false as default

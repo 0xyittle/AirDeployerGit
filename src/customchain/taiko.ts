@@ -1,19 +1,19 @@
 // import { defineChain } from '../../utils/chain/defineChain.js'
 import { defineChain } from 'viem'
 
-export const mintMainnet = /*#__PURE__*/ defineChain({
-  id: 185,
-  name: 'Mint Mainnet',
+export const taiko = /*#__PURE__*/ defineChain({
+  id: 167000,
+  name: 'Taiko Mainnet',
   nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
     default: {
-      http: ['https://rpc.mintchain.io'],
+      http: ['https://rpc.mainnet.taiko.xyz	'],
     },
   },
   blockExplorers: {
     default: {
-      name: 'Blockscout',
-      url: 'https://explorer.mintchain.io/',
+      name: 'taikoscan',
+      url: 'https://taikoscan.io/',
     //   apiUrl: 'https://cyberscan.co/api',
     },
   },

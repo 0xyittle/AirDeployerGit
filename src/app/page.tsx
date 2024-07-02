@@ -31,7 +31,7 @@ export default function Home() {
   const [walletChain, setWalletChain] = useState<number>(20)
   const [name, setName] = useState<string>('')
   const [token, setToken] = useState<string>('')
-  const [mintPrice, setMintPrice] = useState<number>(0)
+  const [mintPrice, setMintPrice] = useState<string>('0')
   const [uri, setURI] = useState<string>('')
   const [startDate, setStartDate] = useState<number>(0)
   const [endDate, setEndDate] = useState<number>(0)
@@ -78,8 +78,10 @@ export default function Home() {
 
       let bytecode = await ByteRouter() ; 
 
+      let weiMintPrice = Number(mintPrice)*1000000000000000000
+
       const factory = new ethers.ContractFactory(abiVER3, bytecode, signer);
-      const contract = await factory.deploy(name,token,String(mintPrice),uri,startDate,endDate,maxSupply,maxPerWallet);
+      const contract = await factory.deploy(name,token,String(weiMintPrice),uri,startDate,endDate,maxSupply,maxPerWallet);
       // const txReceipt = await deploy.deploymentTransaction().wait();
 
       // const tx = await factory.getDeployTransaction()
@@ -123,13 +125,13 @@ export default function Home() {
         }}
       />
 
-      <Title level={5} className="mt-3">MintPrice wei</Title>
+      <Title level={5} className="mt-3">MintPrice (ETH)</Title>
       <Input 
-        placeholder='MintPrice wei'
+        placeholder='MintPrice (ETH)'
         className="margin-5"
         size='large'
         onChange={(e) => {
-          setMintPrice(Number(e.target.value))
+          setMintPrice(e.target.value)
         }}
       />
 
