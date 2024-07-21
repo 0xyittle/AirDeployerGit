@@ -29,7 +29,8 @@ createWeb3Modal({
     167000: 'https://cdn.dribbble.com/userupload/7958487/file/original-1348331c2846a04355261f363fb75f0c.png?resize=1600x1200', // Taiko
     59144: 'https://images.seeklogo.com/logo-png/52/1/linea-logo-png_seeklogo-527155.png', // Linea
     534352: 'https://media.licdn.com/dms/image/D4E0BAQF6gMSNL5xYCA/company-logo_200_200/0/1692892037062/scroll_io_logo?e=2147483647&v=beta&t=H0sTCb5XBPUvt7yKUD65kYY2qN9L5dd0udOMu48PkKk', // Scroll
-  
+    888888888: 'https://pbs.twimg.com/profile_images/1701848315997077504/yovD2pCX_400x400.jpg', // Ancient8
+    255:    'https://avatars.githubusercontent.com/u/126645000?s=280&v=4', // Kroma
   },
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
   enableOnramp: true, // Optional - false as default
