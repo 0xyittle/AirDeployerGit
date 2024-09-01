@@ -5,7 +5,9 @@ import { arbitrum, base, mode, optimism, zora, blast, fraxtal , cyber, redstone,
 import { injected, coinbaseWallet, walletConnect } from 'wagmi/connectors'
 import { mintMainnet  } from '@/customchain/mint'
 import { berachainTestnet } from '@/customchain/bera'
-import { taiko } from '@/customchain/taiko'
+import { taiko } from '@/customchain/taiko';
+import { soneium } from '@/customchain/soneium';
+import { abstract } from '@/customchain/abstract';
 
 // Get projectId at https://cloud.walletconnect.com
 export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID
@@ -44,6 +46,8 @@ export const config = createConfig({
     [scroll.id]: http(),
     [ancient8.id]: http(),
     [kroma.id]: http(),
+    [soneium.id]: http(),
+    [abstract.id]: http(),
   },
   connectors: [
     walletConnect({ projectId, metadata, showQrModal: false }),

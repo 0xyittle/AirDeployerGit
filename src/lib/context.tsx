@@ -31,6 +31,8 @@ createWeb3Modal({
     534352: 'https://media.licdn.com/dms/image/D4E0BAQF6gMSNL5xYCA/company-logo_200_200/0/1692892037062/scroll_io_logo?e=2147483647&v=beta&t=H0sTCb5XBPUvt7yKUD65kYY2qN9L5dd0udOMu48PkKk', // Scroll
     888888888: 'https://pbs.twimg.com/profile_images/1701848315997077504/yovD2pCX_400x400.jpg', // Ancient8
     255:    'https://avatars.githubusercontent.com/u/126645000?s=280&v=4', // Kroma
+    11124:  'https://pbs.twimg.com/profile_images/1816175731203862528/OCtFkZbn_400x400.jpg', //Abstract Testnet
+    1946:   'https://cdn.discordapp.com/attachments/1279800991960531038/1279818270366630081/ujzFVEj0_400x400.png?ex=66d5d325&is=66d481a5&hm=5566eefbde9038f67febb181795ce35c18b738849929cee18feedfeba97c3672&' //Soneium Minato Testnet
   },
   enableAnalytics: true, // Optional - defaults to your Cloud configuration
   enableOnramp: true, // Optional - false as default
