@@ -10,12 +10,12 @@ export const soneium = /*#__PURE__*/ defineChain({
     symbol: 'ETH',
   },
   rpcUrls: {
-    default: { http: ['https://rpc.minato.soneium.org/'] },
+    default: { http: ['https://rpc.minato.soneium.org'] },
   },
   blockExplorers: {
     default: {
       name: 'Soneium Minato Explorer',
-      url: 'https://explorer-testnet.soneium.org/',
+      url: 'https://explorer-testnet.soneium.org',
     },
   },
   testnet: true,

@@ -150,6 +150,7 @@ export default function Home() {
         placeholder='StartDate UnixTimeStamp'
         className="margin-5"
         size='large'
+        type="number"
         onChange={(e) => {
           setStartDate(Number(e.target.value))
         }}
@@ -160,6 +161,7 @@ export default function Home() {
         placeholder='EndDate UnixTimeStamp'
         className="margin-5"
         size='large'
+        type="number"
         onChange={(e) => {
           setEndDate(Number(e.target.value))
         }}
@@ -170,6 +172,7 @@ export default function Home() {
         placeholder='MaxSupply (0 = infinity)'
         className="margin-5"
         size='large'
+        type="number"
         onChange={(e) => {
           setMaxSupply(Number(e.target.value))
         }}
@@ -180,6 +183,7 @@ export default function Home() {
         placeholder='MaxPerWallet (0 = infinity)'
         className="margin-5"
         size='large'
+        type="number"
         onChange={(e) => {
           setMaxPerWallet(Number(e.target.value))
         }}

@@ -7,7 +7,7 @@ export const taiko = /*#__PURE__*/ defineChain({
   nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
     default: {
-      http: ['https://rpc.mainnet.taiko.xyz	'],
+      http: ['https://rpc.mainnet.taiko.xyz'],
     },
   },
   blockExplorers: {
