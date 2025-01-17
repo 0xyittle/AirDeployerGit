@@ -15,7 +15,7 @@ export const abstract = /*#__PURE__*/ defineChain({
   blockExplorers: {
     default: {
       name: 'Abstract Explorer',
-      url: 'https://explorer.testnet.abs.xyz',
+      url: 'https://sepolia.abscan.org/',
     },
   },
   testnet: true,

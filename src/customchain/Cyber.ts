@@ -1,20 +1,20 @@
 // import { defineChain } from '../../utils/chain/defineChain.js'
 import { defineChain } from 'viem'
 
-export const taiko = /*#__PURE__*/ defineChain({
-  id: 167000,
-  name: 'Taiko Mainnet',
+export const cyber = /*#__PURE__*/ defineChain({
+  id: 7560,
+  name: 'Cyber',
   nativeCurrency: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   rpcUrls: {
     default: {
-      http: ['https://rpc.mainnet.taiko.xyz	'],
+      http: ['https://cyber.alt.technology'],
     },
   },
   blockExplorers: {
     default: {
-      name: 'taikoscan',
-      url: 'https://taikoscan.io/',
-    //   apiUrl: 'https://cyberscan.co/api',
+      name: 'Blockscout',
+      url: 'https://cyberscan.co',
+      apiUrl: 'https://cyberscan.co/api',
     },
   },
   contracts: {

@@ -15,20 +15,24 @@ import {
   zora,
   blast,
   fraxtal,
-  cyber,
-  redstone,
   scroll,
   linea,
   ancient8,
   kroma,
-  bitkub
+  bitkub,
+  abstractTestnet,
+  apeChain,
+  soneiumMinato,
+  soneium,
 } from "wagmi/chains";
 import { injected, coinbaseWallet, walletConnect } from "wagmi/connectors";
 import { mintMainnet } from "@/customchain/mint";
+import { cyber } from "@/customchain/Cyber";
+import { redstone } from "@/customchain/redstone";
 import { berachainTestnet } from "@/customchain/bera";
 import { taiko } from "@/customchain/taiko";
-import { soneium } from "@/customchain/soneium";
-import { abstract } from "@/customchain/abstract";
+// import { soneium } from "@/customchain/soneium";
+// import { abstract } from "@/customchain/abstract";
 
 // Get projectId at https://cloud.walletconnect.com
 export const projectId = process.env.NEXT_PUBLIC_PROJECT_ID;
@@ -61,17 +65,19 @@ export const config = createConfig({
     // scroll,
     ancient8,
     kroma,
-    soneium,
-    abstract,
+    soneiumMinato,
+    abstractTestnet,
     bitkub,
+    apeChain,
+    soneium,
   ],
   transports: {
-    [optimism.id]: http(),
-    [base.id]: http(),
-    [zora.id]: http(),
+    [optimism.id]: http("https://optimism-rpc.publicnode.com/"),
+    [base.id]: http("https://g.w.lavanet.xyz:443/gateway/base/rpc-http/1d6633d3eb2fdb775b0f8b2773eec01d"),
+    [zora.id]: http("https://zora-mainnet.g.alchemy.com/v2/kvbGb2Eg_OEQvKlfX5hWmcfdkve04xkt"),
     [mode.id]: http(),
-    [blast.id]: http(),
-    [arbitrum.id]: http(),
+    [blast.id]: http("https://g.w.lavanet.xyz:443/gateway/blast/rpc-http/1d6633d3eb2fdb775b0f8b2773eec01d"),
+    [arbitrum.id]: http("https://g.w.lavanet.xyz:443/gateway/arb1/rpc-http/1d6633d3eb2fdb775b0f8b2773eec01d"),
     [berachainTestnet.id]: http(),
     [cyber.id]: http(),
     [mintMainnet.id]: http(),
@@ -82,9 +88,11 @@ export const config = createConfig({
     // [scroll.id]: http(),
     [ancient8.id]: http(),
     [kroma.id]: http(),
-    [soneium.id]: http(),
-    [abstract.id]: http(),
+    [soneiumMinato.id]: http(),
+    [abstractTestnet.id]: http(),
     [bitkub.id]: http(),
+    [apeChain.id]: http(),
+    [soneium.id]: http(),
   },
   connectors: [
     walletConnect({ projectId, metadata, showQrModal: false }),
